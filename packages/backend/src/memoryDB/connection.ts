@@ -16,6 +16,8 @@ export const connection = async () => {
       { upsert: true }
     )
   }
+
+  return connState
 }
 
 const userMock = {
