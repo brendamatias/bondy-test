@@ -1,42 +1,35 @@
-# bondy-desafio-fullstack
+# Graphql Test
 
-## Estrutura do repositório:
-Este projeto é um monorepo construído com Lerna (para saber mais => https://lerna.js.org/)
+## Visão Geral
 
-- `backend` (API Graphql para realizar desafio de backend)
-- `frontend` (Repo para criação do frontend do desafio)
+Este projeto é um monorepo construído com Lerna, que inclui uma API GraphQL para o desafio de backend e um frontend para a interface do usuário. O objetivo do projeto é demonstrar a integração entre uma API GraphQL e uma aplicação frontend.
 
-```
-packages/
-    backend/
-        src/
-            ...
-        package.json
-        serverless.yml
-    frontend/
-        package.json
+Para mais informações sobre Lerna, visite [Lerna.js](https://lerna.js.org/).
 
-package.json
-```
-Para executar os scripts presentes nos arquivos package.json:
+## Executando Scripts
+
+Para executar os scripts presentes nos arquivos `package.json`, utilize os seguintes comandos:
+
+- **Executar comandos em todos os pacotes**:
 
 - `yarn lerna run` + comando (ex: `yarn lerna run test:coverage`)
 - Em um projeto específico `yarn lerna run start --scope=backend`, o scope é o name que está no package.json
 - Também é possível executar os comandos normalmente entrando na pasta especifica do projeto.
 
-## O que deve ser feito
+## Backend
 
-### Backend:
-Utilizar a estrutura existente para criar uma mutation para realização de um login, a mesma deve receber email e senha e fazer verificação no banco se as informações estão corretas:
-- O projeto está configurado com Node 18, dar yarn na raiz para baixar dependências.
-- O projeto já está configurado apontado para o banco MongoDB de testes;
-- As configurações do banco estão no arquivo src/memoryDB/connection.ts
-- Já existe um usuário cadastrado com o email desafio@bondy.com.br e senha 123456, que está salva encriptado utilizando a lib bcrypt;
-- Essa mutation de login deve retornar todas as informações salvas na model User;
-- Ao rodar o projeto com `yarn start` será apresentado no console a url para o Playground para testes de graphql;
+### Configuração
 
-### Frontend:
-Criar um projeto frontend dentro da pasta packages/frontend:
-- O projeto deve se conectar com o backend e realizar as consultas via graphql;
-- Deve conter uma pagina de login, com campo de e-mail e senha;
-- Ao passar os dados corretamente o usuário deve ser direciona a uma pagina de boas-vindas;
+- O projeto está configurado para Node.js 18.
+- Execute yarn na raiz do projeto para instalar as dependências.
+- O projeto está configurado para usar um banco de dados MongoDB de testes.
+- As configurações do banco de dados estão no arquivo src/memoryDB/connection.ts.
+- Um usuário já está cadastrado com o e-mail desafio@bondy.com.br e a senha 123456, que está salva de forma encriptada utilizando a lib bcrypt.
+- Ao rodar o projeto com yarn start, a URL do Playground para testes de GraphQL será exibida no console.
+
+## Frontend
+
+### Configuração
+
+- Certifique-se de que o backend esteja rodando antes de iniciar o frontend.
+- O frontend está configurado para se conectar com o backend e realizar consultas GraphQL.
