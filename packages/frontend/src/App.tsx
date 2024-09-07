@@ -1,11 +1,7 @@
-import { useState } from "react";
+import { RouterProvider } from "./router";
 
 function App() {
-  return (
-    <div>
-      <span>Hello world</span>
-    </div>
-  );
+  return <RouterProvider />;
 }
 
 export default App;
